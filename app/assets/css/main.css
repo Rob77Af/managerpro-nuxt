@@ -1,0 +1,49 @@
+/* ManagerPro - Global CSS */
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@400;700&family=Inter:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-port-primary-light: #4C6F51;
+  --color-port-primary-lightest-light: #D6E3D8;
+  --color-port-primary-lighter-light: #91A895;
+  --color-port-primary-dark-light: #28422B;
+  --color-port-glow-light: #F5C25F;
+  --color-port-contrast-light: #F7F7F7;
+  --color-port-hull-dark: #306844;
+  --color-port-glow-dark: #FFBE64;
+  --color-port-deep-dark: #142346;
+  --color-port-dark-bg-dark: #1A202C;
+  --color-port-crane-dark: #BE1E2D;
+  --color-port-light: #E2E8F0;
+  --color-focus-rgb: 76, 111, 81;
+  --font-family-sans: 'Play';
+}
+
+body {
+  font-family: var(--font-family-sans), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(var(--color-focus-rgb), 0.3) !important;
+  border-color: var(--color-port-primary-light, #4C6F51) !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+html.dark input:focus, html.dark select:focus, html.dark textarea:focus {
+  border-color: var(--color-port-hull-dark, #306844) !important;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+.dark ::-webkit-scrollbar-track { background: var(--color-port-deep-dark, #142346); }
+::-webkit-scrollbar-thumb { background: var(--color-port-hull-dark, #306844); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-port-glow-dark, #FFBE64); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
